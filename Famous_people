@@ -1,0 +1,30 @@
+CREATE TABLE athletes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    nationality TEXT);
+    
+INSERT INTO athletes (fullname, age, nationality) VALUES ("Vie", 54, "MaS");
+INSERT INTO athletes (fullname, age, nationality) VALUES ("Ouna", 62, "US");
+INSERT INTO athletes (fullname, age, nationality) VALUES ("Bonot", 87, "ALG");
+INSERT INTO athletes (fullname, age, nationality) VALUES ("Zaka", 69, "France");
+INSERT INTO athletes (fullname, age, nationality) VALUES ("Hakimi", 33, "SP");
+
+CREATE table club (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+   athletes_id INTEGER,
+  Team TEXT,
+   Post TEXT);
+    
+INSERT INTO club (athletes_id, Team, POst) VALUES (1, "Madrid", "STR");
+INSERT INTO club (athletes_id, Team, Post) VALUES (2, "PSG", "DEF");
+INSERT INTO club (athletes_id, Team, Post) VALUES (3, "FCB", "RL ");
+INSERT INTO club (athletes_id, Team, Post) VALUES (4, "RCA", "RB");
+INSERT INTO club (athletes_id, Team, Post) VALUES (5, "WAC", "GK");
+
+
+
+SELECT athletes.fullname, club.team
+FROM athletes
+JOIN club
+ON athletes.id = club.athletes_id;
